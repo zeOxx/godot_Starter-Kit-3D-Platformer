@@ -1,7 +1,10 @@
 extends Node3D
 
+@export var fallDelay := 0.5
+
 var falling := false
 var gravity := 0.0
+var fallTimer = Timer.new()
 
 func _process(delta):
 	scale = scale.lerp(Vector3(1, 1, 1), delta * 10) # Animate scale
@@ -17,7 +20,17 @@ func _process(delta):
 
 func _on_body_entered(_body):
 	if !falling:
-		Audio.play("res://sounds/fall.ogg") # Play sound
-		scale = Vector3(1.25, 1, 1.25) # Animate scale
-		
+		scale = Vector3(1.1, 1, 1.1)
+		startTimer()
+
+func startTimer() -> void:
+	fallTimer.connect("timeout", timerDone)
+	fallTimer.wait_time = fallDelay
+	fallTimer.one_shot = true
+	add_child(fallTimer)
+	fallTimer.start()
+
+func timerDone() -> void:
+	Audio.play("res://sounds/fall.ogg") # Play sound
+	scale = Vector3(1.25, 1, 1.25) # Animate scale
 	falling = true

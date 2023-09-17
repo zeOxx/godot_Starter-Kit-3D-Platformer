@@ -11,6 +11,7 @@ size = Vector3(2, 0.1, 2)
 
 [node name="platform-falling" instance=ExtResource("1_gkggt")]
 script = ExtResource("2_6ganw")
+fallDelay = null
 
 [node name="StaticBody3D" type="StaticBody3D" parent="platform-falling2" index="0"]
 
