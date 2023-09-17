@@ -162,12 +162,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -6)
 
 [node name="platform-falling" parent="World" instance=ExtResource("9_2fnpo")]
 transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, -9, 0.419294, 4)
+fallDelay = 0.5
 
 [node name="platform-falling2" parent="World" instance=ExtResource("9_2fnpo")]
 transform = Transform3D(0.994522, 0, -0.104528, 0, 1, 0, 0.104528, 0, 0.994522, -12, -0.315063, 4)
+fallDelay = 0.5
 
 [node name="platform-falling3" parent="World" instance=ExtResource("9_2fnpo")]
 transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, -11.7527, 1.8303, -2.30579)
+fallDelay = 0.5
 
 [node name="platform-grass-large-round" parent="World" instance=ExtResource("8_4oh1e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -2)

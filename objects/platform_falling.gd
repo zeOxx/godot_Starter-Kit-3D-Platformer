@@ -19,7 +19,9 @@ func _process(delta):
 
 
 func _on_body_entered(_body):
-	if !falling:
+	# time left = 0 means either the timer is finished, or the timer hasn't started
+	if !falling and fallTimer.time_left == 0:
+		Audio.play("res://sounds/trap_landing.wav") # Play sound
 		scale = Vector3(1.1, 1, 1.1)
 		startTimer()
 
